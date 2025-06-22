@@ -57,7 +57,8 @@
 
         if (code && state) {
             // Success - redirect to app with auth code
-            const appUrl = `dilab://auth?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}&platform=tiktok`;
+            const appUrl = `com.dilam.dilab://auth?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}&platform=tiktok`;
+
             
             // Try to open the app
             window.location.href = appUrl;
@@ -75,7 +76,8 @@
             
             // Redirect to app with error
             setTimeout(() => {
-                window.location.href = `dilab://auth?error=${encodeURIComponent(error)}&platform=tiktok`;
+                window.location.href = `com.dilam.dilab://auth?error=${encodeURIComponent(error)}&platform=tiktok`;
+
             }, 3000);
         } else {
             // No parameters - something went wrong
